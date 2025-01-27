@@ -2,17 +2,12 @@
 
 #include <iostream>
 
-ClapTrap::ClapTrap() {
-    std::cout << "ClapTrap " + this->name + " enters the battlefield"
-              << std::endl;
-};
-
 ClapTrap::ClapTrap(std::string name) : name{name} {
     std::cout << "ClapTrap " + name + " enters the battlefield" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& rhs)
-    : name{rhs.name}, hp{rhs.hp}, sp{rhs.sp}, ap{rhs.ap} {
+ClapTrap::ClapTrap(const ClapTrap& other)
+    : name{other.name}, hp{other.hp}, sp{other.sp}, ap{other.ap} {
     std::cout << "ClapTrap " + name + " enters the battlefield" << std::endl;
 }
 
@@ -21,12 +16,12 @@ ClapTrap::~ClapTrap() {
               << std::endl;
 }
 
-ClapTrap& ::ClapTrap::operator=(const ClapTrap & rhs) {
-    if (this != &rhs) {
-        this->name = rhs.name;
-        this->hp = rhs.hp;
-        this->sp = rhs.sp;
-        this->ap = rhs.ap;
+ClapTrap& ::ClapTrap::operator=(const ClapTrap & other) {
+    if (this != &other) {
+        this->name = other.name;
+        this->hp = other.hp;
+        this->sp = other.sp;
+        this->ap = other.ap;
     }
     return *this;
 }

@@ -4,19 +4,15 @@
 
 class ScavTrap : public ClapTrap {
    public:
-    ScavTrap();
-    ScavTrap(std::string name);
-    ScavTrap(const ScavTrap &rhs);
+    ScavTrap(std::string name = "Default ScrapTrap");
+    ScavTrap(const ScavTrap &other);
     ~ScavTrap();
-    ScavTrap &operator=(const ScavTrap &rhs);
+
+    ScavTrap &operator=(const ScavTrap &other);
+    
     void attack(const std::string &target) override;
     void guardGate();
     void printStats() const;
-
-   private:
-    int hp = 100;
-    int sp = 50;
-    int ap = 20;
 };
 
 #endif

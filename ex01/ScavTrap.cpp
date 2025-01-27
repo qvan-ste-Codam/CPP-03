@@ -2,28 +2,24 @@
 
 #include <iostream>
 
-ScavTrap::ScavTrap() : ClapTrap{"Default Scavtrap"} {
-    std::cout << "ScavTrap " + this->name + " enters the battlefield"
-              << std::endl;
-}
-
-ScavTrap::ScavTrap(std::string name) : ClapTrap{name} {
+ScavTrap::ScavTrap(std::string name) : ClapTrap{name, 100, 50, 20} {
     std::cout << "ScavTrap " + this->name + " enters the battlefield"
               << std::endl;
 };
 
-ScavTrap::ScavTrap(const ScavTrap& rhs)
-    : ClapTrap{rhs.name}, hp{rhs.hp}, sp{rhs.sp}, ap{rhs.ap} {
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap{other} {
     std::cout << "ScavTrap " + this->name + " enters the battlefield"
               << std::endl;
 }
 
-ScavTrap::~ScavTrap() {}
+ScavTrap::~ScavTrap() {
+    std::cout << "ScavTrap " + this->name + " left the battlefield"
+              << std::endl;
+}
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
-    if (this != &rhs) {
-        ClapTrap::operator=(rhs);
-        std::cout << "ScavTrap " + this->name + " assigned" << std::endl;
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+    if (this != &other) {
+        ClapTrap::operator=(other);
     }
     return *this;
 }

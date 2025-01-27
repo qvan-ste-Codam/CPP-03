@@ -4,17 +4,16 @@
 
 class ClapTrap {
    public:
-    ClapTrap();
-    ClapTrap(std::string name);
-    ClapTrap(const ClapTrap &rhs);
+    ClapTrap(std::string name = "Default ClapTrap");
+    ClapTrap(const ClapTrap &other);
     ~ClapTrap();
-    ClapTrap &operator=(const ClapTrap &rhs);
+    ClapTrap &operator=(const ClapTrap &other);
     void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
    private:
-    std::string name = "Nameless";
+    std::string name;
     int hp = 10;
     int sp = 10;
     int ap = 10;

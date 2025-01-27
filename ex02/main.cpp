@@ -2,9 +2,9 @@
 #include "ScavTrap.hpp"
 
 int main(void) {
-    ClapTrap clapTrap1{"CPT1"};
-    ScavTrap scavTrap1{"ST1"};
-    ScavTrap scavTrap2{"ST2"};
+    ClapTrap clapTrap1{};
+    ScavTrap scavTrap1{};
+    ScavTrap scavTrap2{};
     ScavTrap scavTrap3 = scavTrap1;
 
     scavTrap1.guardGate();
