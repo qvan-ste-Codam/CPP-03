@@ -2,9 +2,13 @@
 
 #include <iostream>
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap{name, 100, 50, 20} {
+ScavTrap::ScavTrap(std::string name) : ClapTrap{} {
     std::cout << "ScavTrap " + this->name + " enters the battlefield"
               << std::endl;
+    this->name = name;
+    this->hp = 100;
+    this->sp = 50;
+    this->ap = 20;
 };
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap{other} {

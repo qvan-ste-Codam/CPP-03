@@ -27,7 +27,7 @@ ClapTrap& ::ClapTrap::operator=(const ClapTrap & other) {
 }
 
 void ClapTrap::attack(const std::string& target) {
-    if (this->hasSp()) {
+    if (this->isHealthyandRested()) {
         std::cout << "ClapTrap " + this->name + " attacks " + target +
                          ",causing "
                   << this->ap << " points of damage!" << std::endl;
@@ -43,14 +43,18 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-    if (this->hasSp()) {
+    if (this->isHealthyandRested()) {
         std::cout << "ClapTrap " + this->name + " heals for " << amount
                   << " points of damage" << std::endl;
         this->sp--;
     };
 }
 
-bool ClapTrap::hasSp() const {
+bool ClapTrap::isHealthyandRested() const {
+    if (this->hp <= 0) {
+        std::cout << "ClapTrap " + this->name + " is already dead" << std::endl;
+        return false;
+    }
     if (this->sp <= 0) {
         std::cout << "ClapTrap " + this->name +
                          " doesn't have enrgy points left"

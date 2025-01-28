@@ -4,7 +4,7 @@
 
 class ClapTrap {
    public:
-    ClapTrap(std::string name = "Default Name");
+    ClapTrap(std::string name = "Default ClapTrap");
     ClapTrap(const ClapTrap &other);
     ~ClapTrap();
 
@@ -13,7 +13,7 @@ class ClapTrap {
     virtual void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-    void printStats() const;
+    virtual void printStats() const;
 
    protected:
     std::string name;

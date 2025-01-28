@@ -3,10 +3,10 @@ ORANGE = \033[0;33m
 GREEN = \033[0;32m
 NO_COLOUR = \033[0m
 
-CPPFILES = main.cpp ClapTrap.cpp
+CPPFILES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OFILES = $(CPPFILES:.cpp=.o)
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++20
+CXXFLAGS = -Wall -Werror -Wextra -std=c++20 -g
 
 NAME = main
 

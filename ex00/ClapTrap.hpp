@@ -17,7 +17,7 @@ class ClapTrap {
     int hp = 10;
     int sp = 10;
     int ap = 10;
-    bool hasSp() const;
+    bool isHealthyandRested() const;
 };
 
 #endif

@@ -25,7 +25,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
 }
 
 void ScavTrap::attack(const std::string& target) {
-    if (this->hasSp()) {
+    if (this->isHealthyandRested()) {
         std::cout << "ScavTrap " + this->name + " attacks " + target +
                          ",causing "
                   << this->ap << " points of damage!" << std::endl;
@@ -38,7 +38,3 @@ void ScavTrap::guardGate() {
               << std::endl;
 }
 
-void ScavTrap::printStats() const {
-    std::cout << "HP: " << this->hp << " SP: " << this->sp
-              << " AP: " << this->sp << std::endl;
-}

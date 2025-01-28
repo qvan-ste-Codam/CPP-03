@@ -13,6 +13,7 @@ class ClapTrap {
     virtual void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+    void printStats() const;
 
    protected:
     std::string name;
@@ -21,7 +22,7 @@ class ClapTrap {
     int ap = 0;
 
     ClapTrap(std::string name, int hp, int sp, int ap);
-    bool hasSp() const;
+    bool isHealthyandRested() const;
 };
 
 #endif
